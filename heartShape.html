@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Shape</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f0f0; }
+        canvas { border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <canvas id="heartCanvas" width="300" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("heartCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Set color for the heart shape
+        ctx.fillStyle = "red";
+
+        // Draw left arc of the heart
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, 0, Math.PI, true);
+        ctx.fill();
+
+        // Draw right arc of the heart
+        ctx.beginPath();
+        ctx.arc(200, 100, 50, 0, Math.PI, true);
+        ctx.fill();
+
+        // Draw the triangle part of the heart
+        ctx.beginPath();
+        ctx.moveTo(50, 100);
+        ctx.lineTo(150, 250);
+        ctx.lineTo(250, 100);
+        ctx.closePath();
+        ctx.fill();
+    </script>
+</body>
+</html>
